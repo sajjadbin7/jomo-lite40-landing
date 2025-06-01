@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JOMO LITE 40 - অর্ডার করুন</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h2 {
+      text-align: center;
+      color: #D61C4E;
+    }
+    .product-info {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #D61C4E;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #aa1439;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>JOMO LITE 40</h2>
+  <div class="product-info">
+    <p>💨 দাম: ১৬০০ টাকা</p>
+    <p>🚚 ডেলিভারি চার্জ: ৬০ টাকা (সারা বাংলাদেশ)</p>
+    <p>💰 ক্যাশ অন ডেলিভারি</p>
+  </div>
+
+  <form id="orderForm">
+    <label for="district">জেলা:</label>
+    <input type="text" id="district" required>
+
+    <label for="thana">থানা:</label>
+    <input type="text" id="thana" required>
+
+    <label for="name">আপনার নাম:</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">ফোন নম্বর:</label>
+    <input type="tel" id="phone" required>
+
+    <label for="address">পূর্ণ ঠিকানা:</label>
+    <textarea id="address" rows="3" required></textarea>
+
+    <button type="submit">✅ অর্ডার করুন</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const orderData = {
+      district: document.getElementById("district").value,
+      thana: document.getElementById("thana").value,
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      address: document.getElementById("address").value
+    };
+    console.log("Order Received:", orderData);
+    alert("আপনার অর্ডারটি গ্রহণ করা হয়েছে! ধন্যবাদ।");
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
